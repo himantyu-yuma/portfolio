@@ -1,0 +1,99 @@
+body{
+    /* background-image: url("../image/app_icon.png"); */
+    /* background-repeat: no-repeat; */
+    /* background-position: top; */
+    /* background-size: 50vw; */
+    background-color: black;
+}
+
+#app-icon{
+    margin-top: 10%;
+    margin-bottom: 10%;
+    width: 50vw;
+}
+
+#catchphrase-text{
+    color: aliceblue;
+    font-family: "Sawarabi Mincho";
+    font-size: calc(90% + 2vw);
+}
+
+.normal-text{
+    font-family: "Sawarabi Mincho";
+    font-size: calc(70% + 1vw);
+    color: aliceblue;
+    margin-top: 10%;
+}
+
+.col-sm-12{
+    text-align: center;
+}
+
+.col-sm-6{
+    text-align: center;
+
+}
+
+#google-logo{
+    width: 50vw;
+}
+
+#apple-logo{
+    width: 40vw;
+    margin-top: 5%;
+}
+
+.screen-shot{
+    width: 100%;
+}
+
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    }
+    .cp_cssslider {
+    width: 300px;
+    padding-top: 200px; /* 画像の高さ */
+    position: relative;
+    margin: 2em auto;
+    text-align: center;
+    }
+    .cp_cssslider > img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: all 0.5s;
+    border-radius: 3px;
+    box-shadow:0px 0px 5px 0px rgba(0,0,0,0.3);
+    }
+    .cp_cssslider input[name='cp_switch'] {
+    display: none;
+    }
+    /* サムネイル */
+    .cp_cssslider label {
+    margin: 15px 5px 0 5px;
+    border: 2px solid #ffffff;
+    display: inline-block;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    opacity: 0.6;
+    border-radius: 3px;
+    }
+    .cp_cssslider label:hover {
+    opacity: 0.9;
+    }
+    .cp_cssslider label img {
+    display: block;
+    width: 40px;
+    border-radius: 2px;
+    }
+    .cp_cssslider input[name='cp_switch']:checked + label {
+    border: 2px solid #FF7043;
+    opacity: 1;
+    }
+    .cp_cssslider input[name='cp_switch'] ~ img {
+    opacity: 0;
+    }
+    .cp_cssslider input[name='cp_switch']:checked + label + img {
+    opacity: 1;
+    }
