@@ -1,0 +1,21 @@
+h1{ 
+    font-family: "M PLUS Rounded 1c"; 
+    font-size: 10vw;
+    font-weight: bold;
+}
+
+h2{
+    font-family: "M PLUS Rounded 1c";
+    text-align: center;
+    line-height: 300%;
+}
+
+nav{
+    background-color: limegreen;
+}
+
+.menu{
+    font-family: "M PLUS Rounded 1c";
+    font-weight: bold;
+    padding: 5px 30px;
+}
