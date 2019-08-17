@@ -10,6 +10,11 @@ h2{
     line-height: 300%;
 }
 
+h3{
+    font-family: "M PLUS Rounded 1c";
+    text-align: center;
+}
+
 nav{
     background-color: limegreen;
 }
@@ -18,4 +23,8 @@ nav{
     font-family: "M PLUS Rounded 1c";
     font-weight: bold;
     padding: 5px 30px;
+}
+
+.works{
+    text-align: center;
 }
