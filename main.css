@@ -25,6 +25,19 @@ nav{
     padding: 5px 30px;
 }
 
+.about{
+    text-align: center;
+}
+
+.about>p{
+    text-align: left;
+}
+
 .works{
     text-align: center;
+}
+
+.sec-head{
+    display: inline;
+    border-bottom: 1px solid #000;
 }

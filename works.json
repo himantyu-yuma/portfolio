@@ -1,0 +1,39 @@
+{
+    "game_apps": [
+        {
+            "title": "Cube Simulator",
+            "link": "https://1drv.ms/u/s!AsT43GwT9QCUgeocGW6d_FCdhc-5XA?e=TIXzRm",
+            "description": "Unityで初めて作ったゲーム。",
+            "image": "img/"
+        },
+        {
+            "title": "World of Snowplows",
+            "link": "https://1drv.ms/u/s!AsT43GwT9QCUgeocGW6d_FCdhc-5XA?e=TIXzRm",
+            "description": "2泊3日の合宿で作ったゲーム。",
+            "image": "img/"
+        },
+        {
+            "title": "バーチャルオープンキャンパス",
+            "link": "http://virtual-ouc.net/lp",
+            "description": "小樽商科大学のバーチャルオープンキャンパスアプリ（Android iOS）",
+            "image": "img/"
+        }
+    ],
+    "movie": [
+        {
+            "title": "高校時代の動画その1",
+            "description": "高校時代に作った動画その1",
+            "image": "img/"
+        },
+        {
+            "title": "高校時代の動画その2",
+            "description": "高校時代に作ったどうがその2",
+            "image": "img/"
+        },
+        {
+            "title": "VROUC PV",
+            "description": "バーチャルオープンキャンパスのPV",
+            "image": "img/"
+        }
+    ]
+}
