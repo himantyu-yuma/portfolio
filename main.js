@@ -3,7 +3,6 @@ let worksData;
 $.ajax({
     url:'./works.json',
     async: true,
-    type:'POST',
     dataType: "json",
 })
 // Ajaxリクエストが成功した時発動
