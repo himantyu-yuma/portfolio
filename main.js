@@ -9,9 +9,9 @@ $.ajax({
     .done((data) => {
         worksData = data;
         $('#game').append(
-            $('<h3/>').append('<a>', {
+            $('<h3/>').append($('<a>', {
                 text: worksData.game_apps[0].title
-            }).append(
+            })).append(
                     $('<p>').text(data.description)
                 ).append(
                     $('<div>', {
