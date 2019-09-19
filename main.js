@@ -9,15 +9,20 @@ $.ajax({
     .done((data) => {
         worksData = data;
         $('#game').append(
-            $('<h3/>').append($('<a>', {
-                text: worksData.game_apps[0].title
-            })).append(
-                    $('<p>').text(data.description)
-                ).append(
-                    $('<div>', {
-                        class: 'row'
-                    })
-                )
+            $('<h3>').append(
+                $('<a>', {
+                    text: worksData.game_apps[0].title,
+                    href: worksData.game_apps[0].link
+                })
+            )
+        ).append(
+            $('<p>', {
+                text: worksData.game_apps[0].description
+            })
+        ).append(
+            $('<div>', {
+                class: 'row'
+            })
         )
     })
     // Ajaxリクエストが失敗した時発動
