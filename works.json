@@ -5,7 +5,7 @@
             "id": "cube",
             "winLink": "https://drive.google.com/uc?export=download&id=1h94-PIjKp1bC-OQPvUmEXjj3qtVnq0qi",
             "description": "Unityで初めて作ったゲーム。バグ多め。",
-            "image": "img/CubeSimulator.gif"
+            "image": "img/Cube-light.gif"
         },
         {
             "title": "World of Snowplows",
@@ -14,27 +14,27 @@
             "winLink": "https://drive.google.com/uc?export=download&id=1hhfjr1uou0-nmBCy9A4A2u8w99MK6h_R",
             "macLink": "https://drive.google.com/uc?export=download&id=1fzhQMfk3w19gnMlSBJAStppqHRO61R_H",
             "description": "2泊3日の合宿で作ったゲーム。",
-            "image": "img/WoS.gif"
+            "image": "img/WoS-light.gif"
         },
         {
             "title": "バーチャルオープンキャンパス",
             "id": "vrouc",
             "link": "http://virtual-ouc.net/lp",
             "description": "小樽商科大学のバーチャルオープンキャンパスアプリ（Android iOS）",
-            "image": "img/VirtualOUC.gif"
+            "image": "img/VirtualOUC-light.gif"
         }
     ],
     "movie": [
         {
             "title": "高校時代の動画その1",
             "description": "高校時代に作った動画その1",
-            "image": "img/Gun.gif",
+            "image": "img/Gun-light.gif",
             "id": "gun"
         },
         {
             "title": "高校時代の動画その2",
             "description": "高校時代に作った動画その2",
-            "image": "img/Beam.gif",
+            "image": "img/Beam-light.gif",
             "id": "beam"
         },
         {
