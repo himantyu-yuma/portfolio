@@ -1,4 +1,15 @@
+# -*- coding: utf-8 -*-
+import sys
+import json
+import sys,io
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
+# 第1引数を出力先のhtml名にする
+out_html = sys.argv[1]
+# 作品データの入っているjson
+data = './works.json'
+# 最初の部分のhtml
+before_html = '''
 <!DOCTYPE html>
 <html>
 
@@ -55,81 +66,16 @@
 
     <h2>ゲーム・アプリ</h2>
     <section id="game">
-
-    <h3>Cube Simulator</h3>
-      <div class="row">
-        <div class="col-sm">
-          <img src="img/Cube-light.gif">
-        </div>
-        <div class="col-sm description">
-          <h4>Unityで初めて作ったゲーム。バグ多め。</h4>
-          <div class="links">
-            <h4 class="mt-5"><a href="https://drive.google.com/uc?export=download&id=1h94-PIjKp1bC-OQPvUmEXjj3qtVnq0qi">Windows</a></h4>
-          </div>
-        </div>
-      </div>
-  
-    <h3>World of Snowplows</h3>
-      <div class="row">
-        <div class="col-sm">
-          <img src="img/WoS-light.gif">
-        </div>
-        <div class="col-sm description">
-          <h4>2泊3日の合宿で作ったゲーム。</h4>
-          <div class="links">
-            <h4 class="mt-5"><a href="https://soukatsu-ouc.com/works/world-of-snowplows">紹介ページ</a></h4><h4 class="mt-5"><a href="https://drive.google.com/uc?export=download&id=1hhfjr1uou0-nmBCy9A4A2u8w99MK6h_R">Windows</a></h4><h4 class="mt-5"><a href="https://drive.google.com/uc?export=download&id=1fzhQMfk3w19gnMlSBJAStppqHRO61R_H">Mac</a></h4>
-          </div>
-        </div>
-      </div>
-  
-    <h3>バーチャルオープンキャンパス</h3>
-      <div class="row">
-        <div class="col-sm">
-          <img src="img/VirtualOUC-light.gif">
-        </div>
-        <div class="col-sm description">
-          <h4>小樽商科大学のバーチャルオープンキャンパスアプリ（Android iOS）</h4>
-          <div class="links">
-            <h4 class="mt-5"><a href="http://virtual-ouc.net/lp">紹介ページ</a></h4>
-          </div>
-        </div>
-      </div>
-  
+'''
+# 中間部分のhtml
+middle_html = '''
     </section>
 
     <h2 class="mt-5">動画</h2>
     <section id="movie">
-
-    <h3>高校時代の動画その1</h3>
-      <div class="row">
-        <div class="col-sm">
-          <img src="img/Gun-light.gif">
-        </div>
-        <div class="col-sm description">
-          <h4>高校時代に作った動画その1</h4>
-        </div>
-      </div>
-  
-    <h3>高校時代の動画その2</h3>
-      <div class="row">
-        <div class="col-sm">
-          <img src="img/Beam-light.gif">
-        </div>
-        <div class="col-sm description">
-          <h4>高校時代に作った動画その2</h4>
-        </div>
-      </div>
-  
-    <h3>VROUC PV</h3>
-      <div class="row">
-        <div class="col-sm">
-          <iframe src='https://www.youtube.com/embed/J2YwOo44aFg' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>
-        </div>
-        <div class="col-sm description">
-          <h4>バーチャルオープンキャンパスのPV</h4>
-        </div>
-      </div>
-  
+'''
+# 最後の部分のhtml
+after_html = '''
     </section>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -146,3 +92,70 @@
 </body>
 
 </html>
+'''
+game_section = ''
+video_section = ''
+
+# jsonデータを読み込んでデコード
+with open(data, mode='r', encoding='utf-8') as f:
+    works = json.loads(f.read())
+for game in works['game_apps']:
+    title = game['title']
+    img_path = game['image']
+    description = game['description']
+    if 'link' in game:
+        link = game['link']
+        link_text = f'<h4 class="mt-5"><a href="{link}">紹介ページ</a></h4>'
+    else:
+        link_text = ''
+    if 'winLink' in game:
+        win_link = game['winLink']
+        win_link_text = f'<h4 class="mt-5"><a href="{win_link}">Windows</a></h4>'
+    else:
+        win_link_text = ''
+    if 'macLink' in game:
+        mac_link = game['macLink']
+        mac_link_text = f'<h4 class="mt-5"><a href="{mac_link}">Mac</a></h4>'
+    else:
+        mac_link_text = ''
+    links = link_text+win_link_text+mac_link_text
+    # ゲームの欄に入力するouterhtmlを記述
+    game_section += f'''
+    <h3>{title}</h3>
+      <div class="row">
+        <div class="col-sm">
+          <img src="{img_path}">
+        </div>
+        <div class="col-sm description">
+          <h4>{description}</h4>
+          <div class="links">
+            {links}
+          </div>
+        </div>
+      </div>
+  '''
+for video in works['movie']:
+    title = video['title']
+    img_path = video['image']
+    description = video['description']
+    if 'youtube' in video:
+        youtube = video['youtube']
+        img_text = youtube
+    else:
+        img_text = f'<img src="{img_path}">'
+    # ビデオの欄に入力するouterhtmlを記述
+    video_section += f'''
+    <h3>{title}</h3>
+      <div class="row">
+        <div class="col-sm">
+          {img_text}
+        </div>
+        <div class="col-sm description">
+          <h4>{description}</h4>
+        </div>
+      </div>
+  '''
+html = before_html+game_section+middle_html+video_section+after_html
+
+with open(out_html, mode='w', encoding='utf-8') as f:
+    f.write(html)
