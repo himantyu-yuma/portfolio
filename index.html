@@ -1,148 +1,118 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
-    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-  <link rel="stylesheet" href="main.css">
-  <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PORTFOLIO</title>
-  <!--[if IE]>
-    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-
-    <![endif]-->
-  <style>
-    article,
-    aside,
-    dialog,
-    figure,
-    footer,
-    header,
-    hgroup,
-    menu,
-    nav,
-    section {
-      display: block;
-    }
-  </style>
+  <link rel="stylesheet" href="uikit/dist/css/uikit.min.css">
+  <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
-  <div class="container">
-    <h1>PORTFOLIO</h1>
-  </div>
-  <header class="sticky-top">
-    <nav class="navbar navbar-expand-sm navbar-light">
-      <a href="./index.html" class="navbar-brand menu">Home</a>
-      <a href="#about" class="navbar-brand menu">About</a>
-      <a href="#works" class="navbar-brand menu">Works</a>
-      <a href="#" class="navbar-brand menu">Contact</a>
+  <header>
+    <nav class="uk-navbar-container uk-expand" id="header" uk-navbar>
+      <div class="uk-navbar-left">
+
+        <a class="uk-navbar-item uk-logo" href="#">PORTFOLIO</a>
+
+      </div>
+      <div class="uk-navbar-right">
+        <ul class="uk-navbar-nav">
+          <li>
+            <a href="#">
+              Home
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              About
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              Works
+            </a>
+          </li>
+        </ul>
+      </div>
     </nav>
   </header>
+  <div class="uk-container">
+    <section class="about uk-section-small">
+      <div class="uk-text-center">
+        <h2 class="sect-head" id="about">About</h2>
+        <div class="uk-margin-top uk-text-left ">
+          <p>Github：<a href="https://github.com/himantyu-yuma">himantyu-yuma</a></p>
+          <p>Twitter：<a href="https://twitter.com/k_y_kenzen">@k_y_kenzen</a></p>
+          <p>Facebook：<a href="https://www.facebook.com/himantyu.yuma">笠原 有真</a></p>
+        </div>
+      </div>
+    </section>
 
-  <div class="container about">
-    <h2 class="sec-head" id="about">About</h2>
-    <p>Name：<a href="https://github.com/himantyu-yuma">himantyu-yuma</a></p>
-    <p>Twitter：<a href="https://twitter.com/k_y_kenzen">@k_y_kenzen</a></p>
-    <p>Facebook：<a href="https://www.facebook.com/himantyu.yuma">笠原 有真</a></p>
+    <section class="works uk-text-center" id="app">
+        <h2 class="sect-head" id="works">Works</h2>
+
+        <section class="uk-section-small" id="game">
+          <h3 class="sect-head">Game</h3>
+
+          <div class="uk-child-width-1-2@m uk-margin-top" uk-grid>
+            <div v-for='game in games'>
+              <div class="uk-card uk-card-default">
+                <div class="uk-card-media-top">
+                  <video v-bind:src="game.src" autoplay muted loop playsinline>
+                </div>
+                <div class="uk-card-body">
+                  <h3 class="uk-card-title" v-text="game.title"></h3>
+                  <p v-text="game.description"></p>
+                  <p>
+                    <a v-bind:href="game.link" class="link">紹介ページ</a>
+                  </p>
+                  <div class="download">
+                    <!-- <a class="uk-button uk-button-secondary win" v-bind:disabled="{ disabled: isWin }" v-bind:href="game.win">Win版ダウンロード</a> -->
+                    <!-- <a class="uk-button uk-button-secondary mac" v-bind:disabled="{ disabled: isMac }" v-bind:href="game.mac">Mac版ダウンロード</a> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </section>
+        <section class="uk-section-small" id="video">
+          <h3 class="sect-head">Video</h3>
+  
+          <div class="uk-child-width-1-2@m uk-margin-top" uk-grid>
+            <div v-for='video in videos'>
+              <div class="uk-card uk-card-default">
+                <div class="uk-card-media-top">
+                  <video v-bind:class="{'d-none': video.src == null}" v-bind:src="video.src" autoplay muted loop
+                    playsinline></video>
+                  <div v-bind:class="{'d-none': video.youtube == null}">
+                    <iframe width="560" height="315"
+                      v-bind:src='video.youtube' frameborder='0'
+                      allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'
+                      allowfullscreen></iframe>
+                  </div>
+                </div>
+                <div class="uk-card-body">
+                  <h3 class="uk-card-title" v-text="video.title"></h3>
+                  <p v-text="video.description"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+    </section>
+
   </div>
 
-  <div class="container works">
-    <h2 class="sec-head" id="works">Works</h2>
-
-    <h2>ゲーム・アプリ</h2>
-    <section id="game">
-
-    <h3>Cube Simulator</h3>
-      <div class="row">
-        <div class="col-sm">
-          <img src="img/Cube-light.gif">
-        </div>
-        <div class="col-sm description">
-          <h4>Unityで初めて作ったゲーム。バグ多め。</h4>
-          <div class="links">
-            <h4 class="mt-5"><a href="https://drive.google.com/uc?export=download&id=1h94-PIjKp1bC-OQPvUmEXjj3qtVnq0qi">Windows</a></h4>
-          </div>
-        </div>
-      </div>
-  
-    <h3>World of Snowplows</h3>
-      <div class="row">
-        <div class="col-sm">
-          <img src="img/WoS-light.gif">
-        </div>
-        <div class="col-sm description">
-          <h4>2泊3日の合宿で作ったゲーム。</h4>
-          <div class="links">
-            <h4 class="mt-5"><a href="https://soukatsu-ouc.com/works/world-of-snowplows">紹介ページ</a></h4><h4 class="mt-5"><a href="https://drive.google.com/uc?export=download&id=1hhfjr1uou0-nmBCy9A4A2u8w99MK6h_R">Windows</a></h4><h4 class="mt-5"><a href="https://drive.google.com/uc?export=download&id=1fzhQMfk3w19gnMlSBJAStppqHRO61R_H">Mac</a></h4>
-          </div>
-        </div>
-      </div>
-  
-    <h3>バーチャルオープンキャンパス</h3>
-      <div class="row">
-        <div class="col-sm">
-          <img src="img/VirtualOUC-light.gif">
-        </div>
-        <div class="col-sm description">
-          <h4>小樽商科大学のバーチャルオープンキャンパスアプリ（Android iOS）</h4>
-          <div class="links">
-            <h4 class="mt-5"><a href="http://virtual-ouc.net/lp">紹介ページ</a></h4>
-          </div>
-        </div>
-      </div>
-  
-    </section>
-
-    <h2 class="mt-5">動画</h2>
-    <section id="movie">
-
-    <h3>高校時代の動画その1</h3>
-      <div class="row">
-        <div class="col-sm">
-          <img src="img/Gun-light.gif">
-        </div>
-        <div class="col-sm description">
-          <h4>高校時代に作った動画その1</h4>
-        </div>
-      </div>
-  
-    <h3>高校時代の動画その2</h3>
-      <div class="row">
-        <div class="col-sm">
-          <img src="img/Beam-light.gif">
-        </div>
-        <div class="col-sm description">
-          <h4>高校時代に作った動画その2</h4>
-        </div>
-      </div>
-  
-    <h3>VROUC PV</h3>
-      <div class="row">
-        <div class="col-sm">
-          <iframe src='https://www.youtube.com/embed/J2YwOo44aFg' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>
-        </div>
-        <div class="col-sm description">
-          <h4>バーチャルオープンキャンパスのPV</h4>
-        </div>
-      </div>
-  
-    </section>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
-      integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
-      crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
-      integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
-      crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="main.js"></script>
+  <script src="jquery/dist/jquery.min.js"></script>
+  <script src="uikit/dist/js/uikit.min.js"></script>
+  <script src="uikit/dist/js/uikit-icons.min.js"></script>
+  <script src="vue/dist/vue.min.js"></script>
+  <script src="js/v1.0/main.js"></script>
 </body>
 
 </html>
