@@ -11,7 +11,6 @@ const apps = [
     {
         "title": "商大生のための時間割",
         "link": "https://seana-totaru.com/",
-        "article": "",
         "description": "小樽商科大学の生徒向けの時間割Webアプリ",
         "src": "video/timetable.mp4"
     },
@@ -24,14 +23,12 @@ const apps = [
     },
     {
         "title": "抽選アプリ",
-        "link": "",
-        "article": "",
+        "article": "https://www.city.shizuoka.lg.jp/000835144.pdf",
         "description": "高校のイベント用に作った抽選Webアプリ",
         "src": "video/lottery.mp4"
     },
     {
         "title": "スタンプラリー",
-        "link": "",
         "article": "https://www.city.shizuoka.lg.jp/000835144.pdf",
         "description": "高校のイベント用に作ったQRコードを使用したスタンプラリーWebアプリ",
         "src": "video/stamp-rally.mp4"
