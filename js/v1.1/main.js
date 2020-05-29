@@ -12,7 +12,7 @@ const apps = [
         "title": "ShodaiManabaHighlight",
         "link": "https://soukatsu-ouc.com/works/494",
         "description": "商大のmanaba用のChrome拡張",
-        "img": "image/manaba.png"
+        "image": "image/manaba.png"
     },
     {
         "title": "商大生のための時間割",
