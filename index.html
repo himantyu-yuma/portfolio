@@ -61,7 +61,8 @@
             <div v-for='app in apps'>
               <div class="uk-card uk-card-default">
                 <div class="uk-card-media-top">
-                  <video v-bind:src="app.src" autoplay muted loop playsinline>
+                  <video v-bind:src="app.video" v-bind:class="{'d-none': app.video == null}" autoplay muted loop playsinline>
+                  <img v-bind:src="app.image" v-bind:class="{'d-none': app.image == null}">
                 </div>
                 <div class="uk-card-body">
                   <h3 class="uk-card-title" v-text="app.title"></h3>
@@ -86,7 +87,7 @@
             <div v-for='game in games'>
               <div class="uk-card uk-card-default">
                 <div class="uk-card-media-top">
-                  <video v-bind:src="game.src" autoplay muted loop playsinline>
+                  <video v-bind:src="game.video" v-bind:disabled="game.video == null" autoplay muted loop playsinline>
                 </div>
                 <div class="uk-card-body">
                   <h3 class="uk-card-title" v-text="game.title"></h3>
@@ -112,7 +113,7 @@
             <div v-for='video in videos'>
               <div class="uk-card uk-card-default">
                 <div class="uk-card-media-top">
-                  <video v-bind:class="{'d-none': video.src == null}" v-bind:src="video.src" autoplay muted loop
+                  <video v-bind:class="{'d-none': video.video == null}" v-bind:src="video.video" autoplay muted loop
                     playsinline></video>
                   <div v-bind:class="{'d-none': video.youtube == null}" class="youtube">
                     <iframe width="560" height="315"
