@@ -108,12 +108,12 @@ const videos =[
     {
         "title": "高校時代の動画その2",
         "description": "高校時代に作った動画その2",
-        "src": "video/beam.mp4",
+        "video": "video/beam.mp4",
     },
     {
         "title": "高校時代の動画その1",
         "description": "高校時代に作った動画その1",
-        "src": "video/battle.mp4",
+        "video": "video/battle.mp4",
     }
     
 ]
