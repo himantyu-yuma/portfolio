@@ -2,23 +2,6 @@ body{
     font-family: "M PLUS Rounded 1c"; 
 }
 
-#header{
-    background-color: limegreen;
-}
-#header *{
-    color: white;
-}
-
-h2.sect-head{
-    display: inline;
-    border-bottom: 1px solid #000;
-}
-
-h3.sect-head{
-    border-top: limegreen solid 1px;
-    border-bottom: limegreen solid 1px;
-}
-
 .d-none{
     display: none;
 }
@@ -37,8 +20,4 @@ h3.sect-head{
     left: 0;
     width: 100%;
     height: 100%;
-}
-
-.uk-card-body p{
-    font-size: 1.4rem;
 }
