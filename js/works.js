@@ -171,6 +171,17 @@ export const webWorks = [
  */
 export const gameWorks = [
   {
+    "title": "小樽商科大学Clusterキャンパス",
+    "description": "バーチャルオープンキャンパスをClusterに移植した版",
+    "image": "image/vrouc-cluster.png",
+    "links": [
+      {
+        "name": "Cluster",
+        "url": "https://cluster.mu/w/0e6039e5-581d-460b-b0a6-27da64d9e0d2"
+      }
+    ]
+  },
+  {
     "title": "デコリヤドカリ",
     "description": "GGJ2021で制作した3D宝探し（？）ゲーム",
     "image": "video/yadokari.mp4",
@@ -186,7 +197,7 @@ export const gameWorks = [
       {
         "name": "mac用",
         "url": "https://github.com/himantyu-yuma/ggj-yadokari/releases/download/v0.5-alpha/mac.zip"
-      },
+      }
     ]
   },
   {
