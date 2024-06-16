@@ -1,4 +1,4 @@
-import { works } from './works.js';
+import { webWorks, gameWorks, videoWorks } from './works.js';
 
 class Work {
   /**
@@ -13,15 +13,15 @@ class Work {
     const work = document.createElement('div');
     work.classList.add('work');
     const workImg = this.work.image;
-    if(workImg.endsWith('.png') || workImg.endsWith('.jpg') || workImg.endsWith('.jpeg')) {
+    if (workImg.endsWith('.png') || workImg.endsWith('.jpg') || workImg.endsWith('.jpeg')) {
       work.innerHTML = `
         <img src="${this.work.image}" alt="${this.work.title}">
       `;
-    } else if(workImg.endsWith('.mp4') || workImg.endsWith('.webm')) {
+    } else if (workImg.endsWith('.mp4') || workImg.endsWith('.webm')) {
       work.innerHTML = `
         <video src="${this.work.image}" alt="${this.work.title}" autoplay loop muted></video>
       `;
-    }
+    };
 
     const workDetail = document.createElement('div');
     workDetail.classList.add('work-detail');
@@ -46,9 +46,20 @@ class Work {
   }
 }
 
-const worksContainer = document.querySelector('#web-works');
-works.forEach(work => {
+const webWorksContainer = document.querySelector('#web-works');
+webWorks.forEach(work => {
   const workInstance = new Work(work);
-  worksContainer.appendChild(workInstance.createDom());
+  webWorksContainer.appendChild(workInstance.createDom());
 });
 
+const gameWorksContainer = document.querySelector('#game-works');
+gameWorks.forEach(work => {
+  const workInstance = new Work(work);
+  gameWorksContainer.appendChild(workInstance.createDom());
+});
+
+const videoWorksContainer = document.querySelector('#video-works');
+videoWorks.forEach(work => {
+  const workInstance = new Work(work);
+  videoWorksContainer.appendChild(workInstance.createDom());
+});
