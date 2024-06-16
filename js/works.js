@@ -20,7 +20,7 @@ export const works = [
   {
     title: 'Work 1',
     description: 'Description 1',
-    image: 'https://via.placeholder.com/150',
+    image: '../image/geek.png',
     links: [
       {
         name: 'Link 1',
@@ -35,7 +35,7 @@ export const works = [
   {
     title: 'Work 2',
     description: 'Description 2',
-    image: 'https://via.placeholder.com/150',
+    image: 'video/battle.mp4',
     links: [
       {
         name: 'Link 1',
@@ -47,19 +47,4 @@ export const works = [
       }
     ]
   },
-  {
-    title: 'Work 3',
-    description: 'Description 3',
-    image: 'https://via.placeholder.com/150',
-    links: [
-      {
-        name: 'Link 1',
-        url: 'https://www.google.com'
-      },
-      {
-        name: 'Link 2',
-        url: 'https://www.google.com'
-      }
-    ]
-  }
 ]
