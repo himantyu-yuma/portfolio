@@ -1,8 +1,0 @@
-{
-  "dependencies": {
-    "bootstrap": "^4.4.1",
-    "jquery": "^3.5.0",
-    "uikit": "^3.4.2",
-    "vue": "^2.6.11"
-  }
-}

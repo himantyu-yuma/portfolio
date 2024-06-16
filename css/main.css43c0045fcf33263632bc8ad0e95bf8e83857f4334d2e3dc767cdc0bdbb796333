@@ -1,0 +1,110 @@
+/* common */
+body {
+    font-family: "Inter", sans-serif;
+}
+
+main {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.d-none {
+    display: none;
+}
+
+.youtube {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-top: 56.25%;
+    overflow: hidden;
+}
+
+.youtube iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+/* about section */
+.links {
+    padding: 0.5rem 0 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.links a {
+    width: fit-content;
+}
+
+/* works section */
+.works-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 0.5rem 0 0 0;
+}
+
+.work {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    width: 14rem;
+    height: 14rem;
+    border: 1px solid #000;
+}
+
+.work img,
+.work video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.work .work-detail {
+    /* display: flexはscript側でつけてる */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.8);
+    overflow-y: auto;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.work ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.work a {
+    color: #007bff;
+    text-decoration: underline;
+}
+
+/* web sections */

@@ -1,1 +1,0 @@
-$('iframe').css('height',$('iframe').width()*9/16);
