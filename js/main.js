@@ -15,11 +15,13 @@ class Work {
     const workImg = this.work.image;
     if (workImg.endsWith('.png') || workImg.endsWith('.jpg') || workImg.endsWith('.jpeg')) {
       work.innerHTML = `
-        <img src="${this.work.image}" alt="${this.work.title}">
+        <img src="${this.work.image}" alt="${this.work.title}" loading="lazy">
       `;
     } else if (workImg.endsWith('.mp4') || workImg.endsWith('.webm')) {
       work.innerHTML = `
-        <video src="${this.work.image}" alt="${this.work.title}" autoplay loop muted></video>
+        <video preload="none" muted loop alt="${this.work.title}" data-src="${this.work.image}">
+          <source data-src="${this.work.image}" type="video/mp4">
+        </video>
       `;
     };
 
@@ -42,7 +44,42 @@ class Work {
 
     work.appendChild(workDetail);
 
+    // Intersection Observer for lazy loading videos
+    const video = work.querySelector('video');
+    if (video) {
+      this.setupVideoLazyLoading(video);
+    }
+
     return work;
+  }
+
+  setupVideoLazyLoading(video) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const videoElement = entry.target;
+          const src = videoElement.dataset.src;
+          if (src && !videoElement.src) {
+            videoElement.src = src;
+            videoElement.load();
+            
+            // Start playing when video is loaded and ready
+            videoElement.addEventListener('loadeddata', () => {
+              videoElement.play().catch(e => {
+                // Autoplay might be blocked, that's okay
+                console.log('Autoplay blocked:', e);
+              });
+            });
+          }
+          observer.unobserve(videoElement);
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '50px'
+    });
+
+    observer.observe(video);
   }
 }
 
